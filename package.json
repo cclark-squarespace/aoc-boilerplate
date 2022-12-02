@@ -1,0 +1,16 @@
+{
+  "name": "aoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "output": "node src",
+    "generate": "node src/generateDay"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "yargs": "^17.6.2"
+  }
+}
