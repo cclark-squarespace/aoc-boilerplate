@@ -1,0 +1,31 @@
+module.exports = (lines) => {
+  const stacks = [];
+
+  for (line of lines) {
+    if (line.includes("[")) {
+      const chars = line.split("");
+      for (let i = 0; i < chars.length; i += 4) {
+        const letter = chars[i + 1].trim();
+
+        if (letter) {
+          if (!stacks[i / 4]) {
+            stacks[i / 4] = [];
+          }
+
+          stacks[i / 4].push(letter);
+        }
+      }
+    }
+
+    if (line.includes("move")) {
+      const [_, n1, n2, n3] = line.match(/move (\d*) from (\d*) to (\d*)/);
+
+      for (let i = 0; i < parseInt(n1); i++) {
+        const move = stacks[parseInt(n2) - 1].shift();
+        stacks[parseInt(n3) - 1].unshift(move);
+      }
+    }
+  }
+
+  return stacks.map((stack) => stack.shift()).join("");
+};
