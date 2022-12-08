@@ -18,8 +18,10 @@ module.exports = (lines) => {
           curPath.push(p3);
         }
       } else if (p2 === "ls") {
+        // do nothing
       }
     } else if (p1 === "dir") {
+      // do nothing
     } else {
       set(files, [...curPath, p2], parseInt(p1));
     }
@@ -31,9 +33,9 @@ module.exports = (lines) => {
     const dir = path ? get(files, path) : files;
     let sum = 0;
 
-    for (p in dir) {
+    for (let p in dir) {
       const fileOrDir = dir[p];
-      if (typeof fileOrDir === 'object') {
+      if (typeof fileOrDir === "object") {
         sum += calculate(path ? [...path, p] : [p]);
       } else {
         sum += fileOrDir;

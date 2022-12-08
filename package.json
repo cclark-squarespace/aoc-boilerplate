@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eslint-config-standard": "^17.0.0",
     "fs-extra": "^11.1.0",
     "yargs": "^17.6.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.29.0"
   }
 }

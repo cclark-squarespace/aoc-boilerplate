@@ -1,7 +1,7 @@
 module.exports = (lines) => {
   const stacks = [];
 
-  for (line of lines) {
+  for (let line of lines) {
     if (line.includes("[")) {
       const chars = line.split("");
       for (let i = 0; i < chars.length; i += 4) {
@@ -18,7 +18,7 @@ module.exports = (lines) => {
     }
 
     if (line.includes("move")) {
-      const [_, n1, n2, n3] = line.match(/move (\d*) from (\d*) to (\d*)/);
+      const [, n1, n2, n3] = line.match(/move (\d*) from (\d*) to (\d*)/);
 
       for (let i = 0; i < parseInt(n1); i++) {
         const move = stacks[parseInt(n2) - 1].shift();

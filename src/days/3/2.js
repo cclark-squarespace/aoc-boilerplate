@@ -33,7 +33,7 @@ module.exports = (lines) => {
 
       const [li1, li2, li3] = lineLengths;
 
-      for (char in dict) {
+      for (let char in dict) {
         const indexes = dict[char];
 
         if (indexes.length !== 3) {

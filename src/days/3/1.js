@@ -18,8 +18,8 @@ module.exports = (lines) => {
     ];
 
     const commonCharacter = (() => {
-      for (char1 of sac1) {
-        for (char2 of sac2) {
+      for (let char1 of sac1) {
+        for (let char2 of sac2) {
           if (char1 === char2) {
             return char1;
           }
